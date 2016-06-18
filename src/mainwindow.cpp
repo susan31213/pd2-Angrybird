@@ -43,7 +43,7 @@ void MainWindow::showEvent(QShowEvent *)
     // Create ground (You can edit here)
     itemList.push_back(new Land(16.0,1.5,32.0,2.0,QPixmap(":/ground.png").scaled(width(),height()/5.0),world,scene));
     // Create shooter
-    itemList.push_back(new Shooter(3,6,0.5,2.5,QPixmap(":/image/shooter.png").scaled(width()/15.0,height()/3),world,scene));
+    itemList.push_back(new Shooter(3,6.5,0.5,2.5,QPixmap(":/image/shooter.png").scaled(width()/15.0,height()/3),world,scene));
     // Create wood
     w1 = new Wood(10.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
     w2 = new Wood(15.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);

@@ -24,8 +24,8 @@ void GameItem::setGlobalSize(QSizeF worldsize, QSizeF windowsize)
 b2Vec2 GameItem::qt2b2Vec(QPointF qtpos)
 {
     b2Vec2 pos;
-    pos.x = ((qtpos.x()-20)*g_worldsize.width()/g_windowsize.width()+g_size.width()/2)-g_size.width()/2;
-    pos.y = (-(qtpos.y()-20)/g_windowsize.height()+1.0f)*g_worldsize.height()-g_size.height()/2;
+    pos.x = ((qtpos.x())*g_worldsize.width()/g_windowsize.width()-g_size.width()/2)-g_size.width()/2;
+    pos.y = (-(qtpos.y())/g_windowsize.height()+1.0f)*g_worldsize.height()-g_size.height()/2;
     return pos;
 }
 

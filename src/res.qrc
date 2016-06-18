@@ -16,7 +16,6 @@
         <file>image/restart.png</file>
         <file>image/win.jpg</file>
         <file>image/577.mp3</file>
-        <file>image/wood_break.mp3</file>
         <file>image/pig.wav</file>
     </qresource>
 </RCC>

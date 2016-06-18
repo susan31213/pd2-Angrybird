@@ -6,9 +6,9 @@ Pig::Pig(float x, float y, float radius, QTimer *timer, QPixmap pixmap, b2World 
 {
     // Set pixmap
     setPixmap(pixmap);
-    setTransformOriginPoint(g_pixmap.boundingRect().width()/1.5,g_pixmap.boundingRect().height()/1.5);
+    setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
     g_pixmap.setPixmap(pixmap);
-    g_pixmap.setTransformOriginPoint(g_pixmap.boundingRect().width()/1.5,g_pixmap.boundingRect().height()/1.5);
+    g_pixmap.setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
     g_size = QSizeF(radius,radius);
 
     // Create Body
