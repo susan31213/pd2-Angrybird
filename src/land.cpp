@@ -4,7 +4,7 @@ Land::Land(float x, float y, float w, float h, QPixmap pixmap, b2World *world, Q
 {
     // Set pixmap
     setPixmap(pixmap);
-    g_pixmap.setPixmap(pixmap);
+    g_pixmap.setPixmap(pixmap.scaled(w*g_windowsize.width()/g_worldsize.width(),h*g_windowsize.height()/g_worldsize.height()));
     g_size = QSizeF(w,h);
 
     // Create body

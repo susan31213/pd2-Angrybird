@@ -41,23 +41,23 @@ void MainWindow::showEvent(QShowEvent *)
     ui->graphicsView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->graphicsView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     // Create ground (You can edit here)
-    itemList.push_back(new Land(16.0,1.5,32.0,2.0,QPixmap(":/ground.png").scaled(width(),height()/5.0),world,scene));
+    itemList.push_back(new Land(16.0,1.5,32.0,3.0,QPixmap(":/ground.png"),world,scene));
     // Create shooter
     itemList.push_back(new Shooter(3,6.5,0.5,2.5,QPixmap(":/image/shooter.png").scaled(width()/15.0,height()/3),world,scene));
     // Create wood
-    w1 = new Wood(10.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
-    w2 = new Wood(15.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
-    w3 = new Wood(20.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
-    w4 = new Wood(25.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
+    w1 = new Wood(10.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
+    w2 = new Wood(15.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
+    w3 = new Wood(20.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
+    w4 = new Wood(25.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
     itemList.push_back(w1);
     itemList.push_back(w2);
     itemList.push_back(w3);
     itemList.push_back(w4);
     // Create pig
-    pig = new Pig(17.3f,3.0f,0.28f,&timer,QPixmap(":/image/pig.png").scaled(height()/13.0,height()/13.0),world,scene);
+    pig = new Pig(17.3f,3.0f,0.28f,&timer,QPixmap(":/image/pig.png").scaled(height()/10.0,height()/10.0),world,scene);
     itemList.push_back(pig);
     // Create bird (You can edit here)
-    bird = new Bird(3.0f,10.0f,0.28f,&timer,QPixmap(":/bird.png").scaled(height()/13.0,height()/13.0),world,scene);
+    bird = new Bird(3.0f,10.0f,0.28f,&timer,QPixmap(":/bird.png").scaled(height()/10.0,height()/10.0),world,scene);
     // Setting the Velocity
     bird->setLinearVelocity(b2Vec2(0,0));
     itemList.push_back(bird);
@@ -123,19 +123,19 @@ bool MainWindow::eventFilter(QObject *, QEvent *event)
             {
                 yellow->spec();
                 yellow->speced = true;
-                white = new White(3.0f,10.0f,0.28f,&timer,QPixmap(":/image/white.png").scaled(height()/15.0,width()/20.0),world,scene);
+                white = new White(3.0f,10.0f,0.28f,&timer,QPixmap(":/image/white.png").scaled(height()/12.0,width()/18.0),world,scene);
             }
             if (blue && blue->shooted == true && blue->speced == false && bird->speced == true)
             {
                 blue->spec();
                 blue->speced = true;
-                yellow = new Yellow(3.0f,10.0f,0.28f,&timer,QPixmap(":/image/yellow.png").scaled(height()/13.0,height()/13.0),world,scene);
+                yellow = new Yellow(3.0f,10.0f,0.28f,&timer,QPixmap(":/image/yellow.png").scaled(height()/10.0,height()/10.0),world,scene);
             }
             if (bird->shooted == true && bird->speced == false)
             {
                 bird->spec();
                 bird->speced = true;
-                blue = new Blue(3.0f,10.0f,0.28f,&timer,QPixmap(":/image/blue.png").scaled(height()/13.0,height()/13.0),world,scene);
+                blue = new Blue(3.0f,10.0f,0.28f,&timer,QPixmap(":/image/blue.png").scaled(height()/12.0,height()/12.0),world,scene);
 
             }
             //std::cout << "Press ! " << std::endl;
@@ -300,12 +300,12 @@ void MainWindow::RESTARTSLOT()
     blue = NULL;
     yellow = NULL;
     white = NULL;
-    w1 = new Wood(10.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
-    w2 = new Wood(15.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
-    w3 = new Wood(20.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
-    w4 = new Wood(25.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png").scaled(width()/60.0,height()/3.0),world,scene);
-    pig = new Pig(17.3f,3.0f,0.28f,&timer,QPixmap(":/image/pig.png").scaled(height()/13.0,height()/13.0),world,scene);
-    bird = new Bird(3.0f,10.0f,0.28f,&timer,QPixmap(":/bird.png").scaled(height()/13.0,height()/13.0),world,scene);
+    w1 = new Wood(10.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
+    w2 = new Wood(15.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
+    w3 = new Wood(20.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
+    w4 = new Wood(25.0f,8.0f,0.3f,3.3f,&timer,QPixmap(":/image/thinwood1.png"),world,scene);
+    pig = new Pig(17.3f,3.0f,0.28f,&timer,QPixmap(":/image/pig.png").scaled(height()/10.0,height()/10.0),world,scene);
+    bird = new Bird(3.0f,10.0f,0.28f,&timer,QPixmap(":/bird.png").scaled(height()/10.0,height()/10.0),world,scene);
     GameItem::score = 0;
     GameItem::restart = false;
     result->hide();

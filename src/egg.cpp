@@ -8,7 +8,7 @@ Egg::Egg(float x, float y, float radius, QTimer *timer, QPixmap pixmap, b2World 
     setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
     g_pixmap.setPixmap(pixmap);
     g_pixmap.setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
-    g_size = QSizeF(radius,radius);
+    g_size = QSizeF(radius*2,radius*2);
 
     // Create Body
     b2BodyDef bodydef;

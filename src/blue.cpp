@@ -15,7 +15,7 @@ Blue::Blue(float x, float y, float radius, QTimer *timer, QPixmap pixmap, b2Worl
     setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
     g_pixmap.setPixmap(pixmap);
     g_pixmap.setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
-    g_size = QSizeF(radius,radius);
+    g_size = QSizeF(radius*2,radius*2);
 
     // Create Body
     b2BodyDef bodydef;
@@ -63,9 +63,9 @@ void Blue::spec()
     float xx = pos.x;
     float yy = pos.y;
 
-    new1 = new Blue(xx, yy, 0.28f, tt, QPixmap(":/image/blue.png"), ww, ss);
+    new1 = new Blue(xx, yy, 0.28f, tt, QPixmap(":/image/blue.png").scaled(600/12.0,600/12.0), ww, ss);
     new1->setLinearVelocity(b2Vec2(g_body->GetLinearVelocity().x+5,g_body->GetLinearVelocity().y+5));
-    new2 = new Blue(xx, yy, 0.28f, tt, QPixmap(":/image/blue.png"), ww, ss);
+    new2 = new Blue(xx, yy, 0.28f, tt, QPixmap(":/image/blue.png").scaled(600/12.0,600/12.0), ww, ss);
     new2->setLinearVelocity(b2Vec2(g_body->GetLinearVelocity().x+5,g_body->GetLinearVelocity().y-5));
     setLinearVelocity(b2Vec2(g_body->GetLinearVelocity().x+5,g_body->GetLinearVelocity().y));
 }

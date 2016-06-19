@@ -5,7 +5,7 @@
 Wood::Wood(float x, float y, float w, float h, QTimer *timer, QPixmap pixmap, b2World *world, QGraphicsScene *scene):GameItem(world)
 {
     // Set pixmap
-    setPixmap(pixmap);
+    setPixmap(pixmap.scaled(w*g_windowsize.width()/g_worldsize.width(),h*g_windowsize.height()/g_worldsize.height()));
     setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
     g_pixmap.setPixmap(pixmap);
     g_pixmap.setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);

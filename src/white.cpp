@@ -13,7 +13,7 @@ White::White(float x, float y, float radius, QTimer *timer, QPixmap pixmap, b2Wo
     setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
     g_pixmap.setPixmap(pixmap);
     g_pixmap.setTransformOriginPoint(g_pixmap.boundingRect().width()/2,g_pixmap.boundingRect().height()/2);
-    g_size = QSizeF(radius,radius);
+    g_size = QSizeF(radius*2,radius*2);
 
     // Create Body
     b2BodyDef bodydef;
@@ -60,7 +60,7 @@ void White::spec()
     b2Vec2 pos = g_body->GetPosition();
     float xx = pos.x;
     float yy = pos.y-0.5;
-    egg = new Egg(xx,yy,0.01,tt,QPixmap(":/image/egg.png").scaled(20,20),ww,ss);
+    egg = new Egg(xx,yy,0.05,tt,QPixmap(":/image/egg.png").scaled(30,25),ww,ss);
     egg->setLinearVelocity(b2Vec2(5.0,-20.0));
     return;
 }
