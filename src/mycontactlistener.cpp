@@ -81,17 +81,9 @@ void MyContactListener::EndContact(b2Contact *contact)
         //qDebug()<< static_cast<GameItem*>( bodyUserData )->datatype<<endl;
         if(static_cast<GameItem*>( bodyUserData )->datatype==BIRD)
             //static_cast<Bird*>( bodyUserData )->endContact();
-        if(static_cast<GameItem*>( bodyUserData )->datatype==WOOD)
-            static_cast<Wood*>( bodyUserData )->endContact();
-        if(static_cast<GameItem*>( bodyUserData )->datatype==PIG){
-            static_cast<Pig*>( bodyUserData )->endContact();
-            if(psound->state() == QMediaPlayer::PlayingState) {
-                psound->setPosition(0);
-            }
-            else if (psound->state() == QMediaPlayer::StoppedState) {
-                psound->play();
-            }
-        }
+        if(static_cast<GameItem*>( bodyUserData )->datatype==WOOD);
+            //static_cast<Wood*>( bodyUserData )->endContact();
+        if(static_cast<GameItem*>( bodyUserData )->datatype==PIG);
     }
 }
 
