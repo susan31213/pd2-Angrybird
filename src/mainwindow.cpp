@@ -69,7 +69,6 @@ void MainWindow::showEvent(QShowEvent *)
     // Timer
     connect(&timer,SIGNAL(timeout()),this,SLOT(tick()));
     connect(&timer,SIGNAL(timeout()),this,SLOT(printscore()));
-    connect(&timer,SIGNAL(timeout()),this,SLOT(CHECKWIN()));
     connect(this,SIGNAL(quitGame()),this,SLOT(QUITSLOT()));
     timer.start(100/6);
     // Button for exit
@@ -118,7 +117,7 @@ bool MainWindow::eventFilter(QObject *, QEvent *event)
             {
                 white->spec();
                 white->speced = true;
-                restart->show();
+                CHECK();
             }
             if (yellow && yellow->shooted == true && yellow->speced == false && blue->speced == true)
             {
@@ -312,12 +311,10 @@ void MainWindow::RESTARTSLOT()
     result->hide();
 }
 
-void MainWindow::CHECKWIN()
+void MainWindow::CHECK()
 {
     if (GameItem::score >= 800)
-    {
-        result->show();
-        restart->show();
-    }
+        result->show();  
+    restart->show();
 
 }

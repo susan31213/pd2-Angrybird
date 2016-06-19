@@ -36,6 +36,7 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     void showEvent(QShowEvent *);
+    void CHECK();
     bool eventFilter(QObject *,QEvent *event);
     void closeEvent(QCloseEvent *);
     QTimer timer;
@@ -52,7 +53,7 @@ private slots:
     // For debug slot
     void QUITSLOT();
     void RESTARTSLOT();
-    void CHECKWIN();
+
 
 private:
     Ui::MainWindow *ui;
